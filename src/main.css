@@ -115,7 +115,7 @@ div.valid {
 }
 
 div.valid_head {
-
+  writing-mode: vertical-lr;
 }
 
 div.valid:nth-child(1) div.valid_head {
