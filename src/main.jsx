@@ -51,6 +51,7 @@ function Monster({monster}) {
       <div className="monster_body">
         <Valids valids={monster.valids} />
       </div>
+      <div className="monster_remark">{monster.remark}</div>
     </div>
   );
 }
@@ -71,7 +72,24 @@ function Valids({valids}) {
 // Control
 function Control() {
   return (
-    <div id="control">control</div>
+    <div id="control">
+      <div id="control_panel"></div>
+      <div id="menu_button">
+        <div id="menu_icon">
+          <div className="menu_icon_bar"></div>
+          <div className="menu_icon_bar"></div>
+          <div className="menu_icon_bar"></div>
+        </div>
+        <div id="menu_text">MENU</div>
+      </div>
+      <div id="menu">
+        <div id="menu_links">
+          <a href="" className="menu_link">English</a>
+          <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
+        </div>
+        <div id="menu_close"></div>
+      </div>
+    </div>
   );
 }
 
@@ -91,11 +109,23 @@ const categories = [
   "牙獣種"
 ];
 
+const habitats = [
+  "山",
+  "川"
+];
+
+const elements = [
+  "火",
+  "毒"
+];
+
 const monsters = [
   {
-    "category": "飛竜種",
     "name": "リオレウス",
     "alias": "火竜",
+    "category": "飛竜種",
+    "habitat": ["山", "川"],
+    "element": ["火"],
     "valids": {
       "火": "◎",
       "水": "◎",
@@ -114,12 +144,15 @@ const monsters = [
       "音": "◎",
       "糞": "◎",
       "肉": "◎"
-    }
+    },
+    "remark": "あああああああああああああああ"
   },
   {
-    "category": "飛竜種",
     "name": "リオレイア",
     "alias": "雌火竜",
+    "category": "飛竜種",
+    "habitat": ["山"],
+    "element": ["火", "毒"],
     "valids": {
       "火": "✕",
       "水": "◎",
@@ -138,12 +171,15 @@ const monsters = [
       "音": "◎",
       "糞": "◎",
       "肉": "◎"
-    }
+    },
+    "remark": ""
   },
   {
-    "category": "牙獣種",
     "name": "ドシャグマ",
     "alias": "闢獣",
+    "category": "牙獣種",
+    "habitat": ["川"],
+    "element": [],
     "valids": {
       "火": "△",
       "水": "◎",
@@ -162,6 +198,7 @@ const monsters = [
       "音": "◎",
       "糞": "◎",
       "肉": "◎"
-    }
+    },
+    "remark": ""
   }
 ];

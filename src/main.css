@@ -55,6 +55,12 @@
   --control-background: #ffffff;
   --control-text: #000000;
 
+  --control-ui-icon: #aaaaaa;
+
+  --control-link: #2233dd;
+
+  /* other */
+  --actionpterygii: #33cccc;
 
 }
 
@@ -86,7 +92,7 @@ div#display {
   padding: 10px;
   margin-left: 3px;
   margin-right: 3px;
-  border-radius: 1rem;
+  border-radius: 5px;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -96,17 +102,18 @@ div#display::-webkit-scrollbar{
 }
 
 div.category {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 div.monsters {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 div.monster {
-
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 div.monster_head {
@@ -222,4 +229,77 @@ div#control {
   background-color: var(--control-background);
   color: var(--control-text);
   font-size: 16px;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div#control_panel {
+}
+
+div#menu_button {
+  /* position: absolute; */
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+div#menu_icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-content: space-around;
+  height: 25px;
+}
+
+div.menu_icon_bar {
+  height: 3px;
+  width: 31px;
+  background-color: var(--control-ui-icon);
+}
+
+div#menu_text {
+  width: 31px;
+  font-size: 10px;
+  font-weight: bold;
+  color: var(--control-ui-icon);
+}
+
+div#menu {
+  
+}
+
+a.menu_link {
+  color: var(--control-link);
+}
+
+a.actionpterygii {
+  color: var(--actionpterygii);
+}
+
+div#menu_close {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+   
+div#menu_close::before,
+div#menu_close::after { /* 共通設定 */
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px; /* 棒の幅（太さ） */
+  height: 30px; /* 棒の高さ */
+  background: var(--control-ui-icon);
+}
+  
+div#menu_close::before {
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+  
+div#menu_close::after {
+  transform: translate(-50%,-50%) rotate(-45deg);
 }
