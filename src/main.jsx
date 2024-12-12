@@ -71,10 +71,15 @@ function Valids({valids}) {
 
 // Control
 function Control() {
+  // 右下メニューの開閉
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
   return (
     <div id="control">
-      <div id="control_panel"></div>
-      <div id="menu_button">
+      <div id="control_panel">
+
+
+      </div>
+      <div id="menu_button" onClick={() => setIsMenuVisible(true)}>
         <div id="menu_icon">
           <div className="menu_icon_bar"></div>
           <div className="menu_icon_bar"></div>
@@ -82,13 +87,17 @@ function Control() {
         </div>
         <div id="menu_text">MENU</div>
       </div>
-      <div id="menu">
-        <div id="menu_links">
-          <a href="" className="menu_link">English</a>
-          <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
+      {isMenuVisible &&
+        <div className="spotlight_fill" onClick={() => setIsMenuVisible(false)}>
+          <div id="menu" onClick={(e) => e.stopPropagation()}>
+            <div id="menu_links">
+              <a href="" className="menu_link">English</a>
+              <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
+            </div>
+            <div id="menu_close" onClick={() => setIsMenuVisible(false)}></div>
+          </div>
         </div>
-        <div id="menu_close"></div>
-      </div>
+      }
     </div>
   );
 }
