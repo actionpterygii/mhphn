@@ -72,14 +72,14 @@ function Valids({valids}) {
 // Control
 function Control() {
   // 右下メニューの開閉
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [isMenuHidden, setIsMenuHidden] = useState(true);
   return (
     <div id="control">
       <div id="control_panel">
 
 
       </div>
-      <div id="menu_button" onClick={() => setIsMenuVisible(true)}>
+      <div id="menu_button" onClick={() => setIsMenuHidden(false)}>
         <div id="menu_icon">
           <div className="menu_icon_bar"></div>
           <div className="menu_icon_bar"></div>
@@ -87,17 +87,15 @@ function Control() {
         </div>
         <div id="menu_text">MENU</div>
       </div>
-      {isMenuVisible &&
-        <div className="spotlight_fill" onClick={() => setIsMenuVisible(false)}>
-          <div id="menu" onClick={(e) => e.stopPropagation()}>
-            <div id="menu_links">
-              <a href="" className="menu_link">English</a>
-              <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
-            </div>
-            <div id="menu_close" onClick={() => setIsMenuVisible(false)}></div>
+      <div className={`spotlight_fill${isMenuHidden ? ' spotlight_fill__off' : ''}`} onClick={() => setIsMenuHidden(true)}>
+        <div id="menu" onClick={(e) => e.stopPropagation()}>
+          <div id="menu_links">
+            <a href="" className="menu_link">English</a>
+            <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
           </div>
+          <div id="menu_close" onClick={() => setIsMenuHidden(true)}></div>
         </div>
-      }
+      </div>
     </div>
   );
 }
@@ -110,7 +108,7 @@ export function Main() {
     window.addEventListener('load', setVh);
     window.addEventListener('resize', setVh);
   }, []);
-  
+
   return (
     <main id="main">
       <Title />

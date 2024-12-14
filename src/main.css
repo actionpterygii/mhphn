@@ -155,71 +155,54 @@ div.valid_head {
   height: 37px;
   border-bottom: solid 1px var(--display-table);
 }
-
 div.valid:nth-child(1) div.valid_head {
   color: var(--display-hi);
 }
-
 div.valid:nth-child(2) div.valid_head {
   color: var(--display-mizu);
 }
-
 div.valid:nth-child(3) div.valid_head {
   color: var(--display-kaminari);
 }
-
 div.valid:nth-child(4) div.valid_head {
   color: var(--display-koori);
 }
-
 div.valid:nth-child(5) div.valid_head {
   color: var(--display-ryu);
 }
-
 div.valid:nth-child(6) div.valid_head {
   color: var(--display-doku);
 }
-
 div.valid:nth-child(7) div.valid_head {
   color: var(--display-mahi);
 }
-
 div.valid:nth-child(8) div.valid_head {
   color: var(--display-suimin);
 }
-
 div.valid:nth-child(9) div.valid_head {
   color: var(--display-bakuha);
 }
-
 div.valid:nth-child(10) div.valid_head {
   color: var(--display-genki);
 }
-
 div.valid:nth-child(11) div.valid_head {
   color: var(--display-kizetsu);
 }
-
 div.valid:nth-child(12) div.valid_head {
   color: var(--display-otoshiwana);
 }
-
 div.valid:nth-child(13) div.valid_head {
   color: var(--display-shibirewana);
 }
-
 div.valid:nth-child(14) div.valid_head {
   color: var(--display-senkou);
 }
-
 div.valid:nth-child(15) div.valid_head {
   color: var(--display-oto);
 }
-
 div.valid:nth-child(16) div.valid_head {
   color: var(--display-koyashi);
 }
-
 div.valid:nth-child(17) div.valid_head {
   color: var(--display-niku);
 }
@@ -249,6 +232,14 @@ div.spotlight_fill {
   height:100%;
   margin: 0 auto;
   background-color: var(--control-fill);
+  visibility: visible;
+  opacity: 1;
+  transition: 0.4s;
+}
+div.spotlight_fill__off {
+  visibility: hidden;
+  opacity: 0;
+
 }
 
 div#control_panel {
@@ -289,7 +280,7 @@ div#menu {
   bottom: 20px;
   border: solid 1px var(--control-ui-light2);
   background-color: var(--control-background);
-  padding: 7px;
+  padding: 10px;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0,0,0,.2);
 }
@@ -297,11 +288,13 @@ div#menu {
 div#menu_links {
   display: flex;
   flex-direction: column;
-  margin-bottom: 5px;
+  row-gap: 5px;
+  margin-bottom: 10px;
 }
 
 a.menu_link {
   color: var(--control-link);
+  font-size: 20px;
 }
 
 a.actionpterygii {
@@ -318,13 +311,13 @@ div#menu_close {
 }
    
 div#menu_close::before,
-div#menu_close::after { /* 共通設定 */
+div#menu_close::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 3px; /* 棒の幅（太さ） */
-  height: 20px; /* 棒の高さ */
+  width: 3px;
+  height: 20px;
   background: var(--control-ui-light);
 }
   
