@@ -104,6 +104,13 @@ function Control() {
 
 // Main
 export function Main() {
+
+  React.useEffect(() => {
+    const setVh = () => document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
+    window.addEventListener('load', setVh);
+    window.addEventListener('resize', setVh);
+  }, []);
+  
   return (
     <main id="main">
       <Title />

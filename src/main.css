@@ -65,11 +65,13 @@
   /* other */
   --actionpterygii: #33cccc;
 
+  --vh: 100svh;
+
 }
 
 main#main {
   max-width: 800px;
-  height: 100svh;
+  height: var(--vh);
   margin: 0 auto;
   background-color: var(--title-background);
   /* border: solid 2px #aaaaaa; */
