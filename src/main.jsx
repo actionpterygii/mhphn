@@ -13,59 +13,43 @@ function Display() {
 
   return (
     <div id="display">
-      {categories.map((category, key) => (
-        <div className="category">
-          <Category _key={key} category={category} />
-          <MonsterList category={category} />
+      {categories.map((category) => (
+        <div key={category} className="category">
+          <div className="category_name">{category}</div>
+          <CategoryMonsterList key={category} category={category} />
         </div>
       ))}
     </div>
   );
 }
 
-function Category({category, _key}) {
-  return (
-    <div key={_key} className="category_name">{category}</div>
-  );
-}
-
-
-
-function MonsterList({category}) {
+function CategoryMonsterList({category}) {
   return (
     <div className="monsters">
-      {monsters.filter(monster => monster.category === category).map((monster, key) => (
-        <Monster monster={monster} />
-      ))}
+      {monsters.filter(monster => monster.category === category).map((monster) => 
+        <Monster key={monster.name} monster={monster} />
+      )}
     </div>
   );
 }
 
 function Monster({monster}) {
   return (
-    <div className="monster">
+    <div key={monster.name} className="monster">
       <div className="monster_head">
         <div className="monster_name">{monster.name}</div>
         <div className="monster_alias">({monster.alias})</div>
       </div>
       <div className="monster_body">
-        <Valids valids={monster.valids} />
+        {Object.keys(monster.valids).map((head) => (
+          <div key={head} className="valid">
+            <div className="valid_head">{head}</div>
+            <div className="valid_body">{monster.valids[head]}</div>
+          </div>
+        ))}
       </div>
       <div className="monster_remark">{monster.remark}</div>
     </div>
-  );
-}
-
-function Valids({valids}) {
-  return (
-    <>
-      {Object.keys(valids).map((head) => (
-        <div className="valid" key={head}>
-          <div className="valid_head">{head}</div>
-          <div className="valid_body">{valids[head]}</div>
-        </div>
-      ))}
-    </>
   );
 }
 
@@ -73,11 +57,41 @@ function Valids({valids}) {
 function Control() {
   // 右下メニューの開閉
   const [isMenuHidden, setIsMenuHidden] = useState(true);
+
+  // 絞り込み状況
+  // 種族、出現フィールド、攻撃属性、最弱点
+  const [refine, setRefine] = useState(Array(4).fill(null));
+
   return (
     <div id="control">
       <div id="control_panel">
-
-
+        <div className="control_select_wrap control_category">
+          <select name="category">
+            <option value="null">種族を選択</option>
+            {categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
+          </select>
+        </div>
+        <div className="control_select_wrap control_habitat">
+          <select name="habitat">
+            <option value="null">生息地を選択</option>
+            {habitats.map((habitat, index) => <option key={index} value={habitat}>{habitat}</option>)}
+          </select>
+        </div>
+        <div className="control_select_wrap control_enemy_element">
+          <select name="enemy_element">
+            <option value="null">攻撃属性を選択</option>
+            {enemy_elements.map((enemy_element, index) => <option key={index} value={enemy_element}>{enemy_element}</option>)}
+          </select>
+        </div>
+        <div className="control_select_wrap control_valid_element">
+          <select name="valid_element">
+            <option value="null">弱点属性を選択</option>
+            {valid_elements.map((valid_element, index) => <option key={index} value={valid_element}>{valid_element}</option>)}
+          </select>
+        </div>
+        <div className="control_select_wrap control_valid_element">
+          <button type="button">クリア</button>
+        </div>
       </div>
       <div id="menu_button" onClick={() => setIsMenuHidden(false)}>
         <div id="menu_icon">
@@ -103,7 +117,9 @@ function Control() {
 // Main
 export function Main() {
 
+  // 読み込み時に実行
   React.useEffect(() => {
+    // バーの有無で変わったりするスマホでも対応できるような縦いっぱい
     const setVh = () => document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
     window.addEventListener('load', setVh);
     window.addEventListener('resize', setVh);
@@ -120,17 +136,39 @@ export function Main() {
 
 const categories = [
   "飛竜種",
-  "牙獣種"
+  "鳥竜種",
+  "獣竜種",
+  "海竜種",
+  "牙獣種",
+  "両生種",
+  "鋏角種"
 ];
 
 const habitats = [
-  "山",
-  "川"
+  "隔ての砂原",
+  "緋の森",
+  "油涌き谷"
 ];
 
-const elements = [
+const valid_elements = [
   "火",
-  "毒"
+  "水",
+  "雷",
+  "氷",
+  "龍"
+];
+
+const enemy_elements = [
+  "火",
+  "水",
+  "雷",
+  "氷",
+  "龍",
+  "毒",
+  "麻痺",
+  "睡眠",
+  "爆破",
+  "悪臭"
 ];
 
 const monsters = [
@@ -138,16 +176,16 @@ const monsters = [
     "name": "リオレウス",
     "alias": "火竜",
     "category": "飛竜種",
-    "habitat": ["山", "川"],
-    "element": ["火"],
+    "habitat": ["緋の森"],
+    "element": ["火", "毒"],
     "valids": {
       "火": "◎",
-      "水": "◎",
-      "雷": "◎",
-      "氷": "◎",
-      "龍": "◎",
-      "毒": "◎",
-      "麻痺": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
       "睡眠": "◎",
       "爆破": "◎",
       "減気": "◎",
@@ -165,16 +203,205 @@ const monsters = [
     "name": "リオレイア",
     "alias": "雌火竜",
     "category": "飛竜種",
-    "habitat": ["山"],
+    "habitat": ["緋の森"],
     "element": ["火", "毒"],
     "valids": {
-      "火": "✕",
-      "水": "◎",
-      "雷": "◎",
-      "氷": "◎",
-      "龍": "◎",
-      "毒": "◎",
-      "麻痺": "◎",
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "レ・ダウ",
+    "alias": "煌雷竜",
+    "category": "飛竜種",
+    "habitat": ["隔ての砂原"],
+    "element": ["雷"],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "イャンクック",
+    "alias": "怪鳥",
+    "category": "鳥竜種",
+    "habitat": ["緋の森"],
+    "element": ["火"],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ケマトリス",
+    "alias": "炎尾竜",
+    "category": "獣竜種",
+    "habitat": ["隔ての砂原"],
+    "element": ["火"],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ププロポル",
+    "alias": "沼噴竜",
+    "category": "獣竜種",
+    "habitat": ["油涌き谷"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "バーラハーラ",
+    "alias": "沙海竜",
+    "category": "海竜種",
+    "habitat": ["隔ての砂原"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ウズ・トゥナ",
+    "alias": "波衣竜",
+    "category": "海竜種",
+    "habitat": ["緋の森"],
+    "element": ["水"],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ババコンガ",
+    "alias": "桃毛獣",
+    "category": "牙獣種",
+    "habitat": ["緋の森"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
       "睡眠": "◎",
       "爆破": "◎",
       "減気": "◎",
@@ -192,16 +419,16 @@ const monsters = [
     "name": "ドシャグマ",
     "alias": "闢獣",
     "category": "牙獣種",
-    "habitat": ["川"],
+    "habitat": ["隔ての砂原", "緋の森"],
     "element": [],
     "valids": {
-      "火": "△",
-      "水": "◎",
-      "雷": "◎",
-      "氷": "◎",
-      "龍": "◎",
-      "毒": "◎",
-      "麻痺": "◎",
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
       "睡眠": "◎",
       "爆破": "◎",
       "減気": "◎",
@@ -214,5 +441,86 @@ const monsters = [
       "肉": "◎"
     },
     "remark": ""
-  }
+  },
+  {
+    "name": "アジャラカン",
+    "alias": "赫猿獣",
+    "category": "牙獣種",
+    "habitat": ["油涌き谷"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "チャタカブラ",
+    "alias": "纏蛙",
+    "category": "両生種",
+    "habitat": ["隔ての砂原"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ラバラ・バリナ",
+    "alias": "刺花蜘蛛",
+    "category": "鋏角種",
+    "habitat": ["緋の森"],
+    "element": [""],
+    "valids": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
 ];

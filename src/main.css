@@ -3,8 +3,11 @@
   --main-border: #aaaaaa;
 
   /* title */
+  --title-height: 50px;
+
   --title-background: #ffffff;
   --title-text: #000000;
+
 
   /* display */
   --display-background: #222222;
@@ -51,7 +54,10 @@
   --display-niku: #ff4444;
   /* --display-niku: #FF5555; */
 
+
   /* control */
+  --control-height: 160px;
+
   --control-background: #ffffff;
   --control-text: #000000;
 
@@ -61,6 +67,7 @@
   --control-fill: #66666666;
 
   --control-link: #2233dd;
+
 
   /* other */
   --actionpterygii: #33cccc;
@@ -78,7 +85,8 @@ main#main {
 }
 
 div#title {
-  height: 10%;
+  height: var(--title-height);
+  /* height: 10%; */
   background-color: var(--title-background);
   color: var(--title-text);
   font-size: 20px;
@@ -86,7 +94,8 @@ div#title {
 
 /* Display */
 div#display {
-  height: 60%;
+  /* height: 65%; */
+  height: calc(100% - (var(--title-height) + var(--control-height)));
   background-color: var(--display-background);
   color: var(--display-text);
   font-size: 16px;
@@ -148,7 +157,6 @@ div.valid div {
 }
 
 div.valid_head {
-  /* writing-mode: vertical-lr; */
   line-height: 16px;
   font-size: 16px;
   padding-top: 3px;
@@ -213,13 +221,15 @@ div.valid_body {
 
 /* Control */
 div#control {
-  height: 30%;
+  /* height: 25%; */
+  height: var(--control-height);
   background-color: var(--control-background);
   color: var(--control-text);
   font-size: 16px;
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
+  padding-top: 20px;
 }
 
 div.spotlight_fill {
@@ -236,13 +246,29 @@ div.spotlight_fill {
   opacity: 1;
   transition: 0.4s;
 }
+/* モーダル */
 div.spotlight_fill__off {
   visibility: hidden;
   opacity: 0;
-
 }
 
 div#control_panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+div.control_select_wrap {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+div#control_panel select {
+  width: 100%;
+  height: 30px;
 }
 
 div#menu_button {
