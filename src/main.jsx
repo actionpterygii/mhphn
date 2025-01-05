@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import "./main.css";
 
 // Title
@@ -9,16 +9,25 @@ function Title() {
 }
 
 // Display
-function Display() {
+function Display({refine}) {
+
+  // 全部の値が'null'の場合true
+  const isDefault = (function(arr) {
+    return arr.every(e => e === 'null');
+  })(refine);
 
   return (
     <div id="display">
-      {categories.map((category) => (
-        <div key={category} className="category">
-          <div className="category_name">{category}</div>
-          <CategoryMonsterList key={category} category={category} />
-        </div>
-      ))}
+      {isDefault ?
+        categories.map((category) => (
+          <div key={category} className="category">
+            <div className="category_name">{category}</div>
+            <CategoryMonsterList key={category} category={category} />
+          </div>
+        ))
+        :
+        'あああ'
+      }
     </div>
   );
 }
@@ -54,43 +63,44 @@ function Monster({monster}) {
 }
 
 // Control
-function Control() {
+function Control({onSelectChange, refine, setRefine}) {
   // 右下メニューの開閉
   const [isMenuHidden, setIsMenuHidden] = useState(true);
 
-  // 絞り込み状況
-  // 種族、出現フィールド、攻撃属性、最弱点
-  const [refine, setRefine] = useState(Array(4).fill(null));
+  // セレクトを初期値に
+  function clearAllSelect() {
+    setRefine(Array(4).fill('null'));
+  }
 
   return (
     <div id="control">
       <div id="control_panel">
         <div className="control_select_wrap control_category">
-          <select name="category">
+          <select name="category" value={refine[0]} onChange={e => onSelectChange(0, e.target.value)}>
             <option value="null">種族を選択</option>
             {categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_habitat">
-          <select name="habitat">
+          <select name="habitat" value={refine[1]} onChange={e => onSelectChange(1, e.target.value)}>
             <option value="null">生息地を選択</option>
             {habitats.map((habitat, index) => <option key={index} value={habitat}>{habitat}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_enemy_element">
-          <select name="enemy_element">
+          <select name="enemy_element" value={refine[2]} onChange={e => onSelectChange(2, e.target.value)}>
             <option value="null">攻撃属性を選択</option>
             {enemy_elements.map((enemy_element, index) => <option key={index} value={enemy_element}>{enemy_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
-          <select name="valid_element">
+          <select name="valid_element" value={refine[3]} onChange={e => onSelectChange(3, e.target.value)}>
             <option value="null">弱点属性を選択</option>
             {valid_elements.map((valid_element, index) => <option key={index} value={valid_element}>{valid_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
-          <button type="button">クリア</button>
+          <button type="button" onClick={clearAllSelect}>クリア</button>
         </div>
       </div>
       <div id="menu_button" onClick={() => setIsMenuHidden(false)}>
@@ -125,11 +135,24 @@ export function Main() {
     window.addEventListener('resize', setVh);
   }, []);
 
+  // 絞り込み状況
+  // 各セレクトボックス
+  // 種族、出現フィールド、攻撃属性、最弱点
+  const [refine, setRefine] = useState(Array(4).fill('null'));
+
+  // セレクトボックスの値が変化したとき
+  function handleSelectChange(type, value) {
+    // refineの値を変更
+    const newRefine = [...refine];
+    newRefine[type] = value;
+    setRefine(newRefine);
+  }
+
   return (
     <main id="main">
       <Title />
-      <Display />
-      <Control />
+      <Display refine={refine} />
+      <Control onSelectChange={handleSelectChange} refine={refine} setRefine={setRefine} />
     </main>
   );
 }
