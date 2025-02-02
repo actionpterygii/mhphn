@@ -16,6 +16,60 @@ function Display({refine}) {
     return arr.every(e => e === 'null');
   })(refine);
 
+  let refinedMonsters = [];
+  if (!isDefault) {
+    for (const monster of monsters) {
+
+      // このモンスターが必要か
+      let isRequired = true;
+
+      // 種族
+      const category = refine[0];
+      if (category !== "null") {
+        if (category === monster["category"]) {
+          isRequired = true;
+        } else {
+          isRequired = false;
+        }
+      }
+
+      // 生息地
+      const habitat = refine[1];
+      if (habitat !== "null" && isRequired) {
+        if (monster["habitat"].includes(habitat)) {
+          isRequired = true;
+        } else {
+          isRequired = false;
+        }
+      }
+
+      // 攻撃属性
+      const enemy_element = refine[2];
+      if (enemy_element !== "null" && isRequired) {
+        if (monster["enemy_element"].includes(enemy_element)) {
+          isRequired = true;
+        } else {
+          isRequired = false;
+        }
+      }
+
+      // 弱点属性
+      const valid_element = refine[3];
+      if (valid_element !== "null" && isRequired) {
+        if (monster["valid_element"][valid_element] === "◎") {
+          isRequired = true;
+        } else {
+          isRequired = false;
+        }
+      }
+
+      if (isRequired) {
+        refinedMonsters.push(monster);
+      }
+
+    }
+  }
+
   return (
     <div id="display">
       {isDefault ?
@@ -26,7 +80,12 @@ function Display({refine}) {
           </div>
         ))
         :
-        'あああ'
+        refinedMonsters == [] ?
+          "該当なし"
+        :
+          refinedMonsters.map((monster) => (
+            <Monster key={monster.name} monster={monster} />
+          ))
       }
     </div>
   );
@@ -50,10 +109,10 @@ function Monster({monster}) {
         <div className="monster_alias">({monster.alias})</div>
       </div>
       <div className="monster_body">
-        {Object.keys(monster.valids).map((head) => (
+        {Object.keys(monster.valid_element).map((head) => (
           <div key={head} className="valid">
             <div className="valid_head">{head}</div>
-            <div className="valid_body">{monster.valids[head]}</div>
+            <div className="valid_body">{monster.valid_element[head]}</div>
           </div>
         ))}
       </div>
@@ -164,7 +223,8 @@ const categories = [
   "海竜種",
   "牙獣種",
   "両生種",
-  "鋏角種"
+  "鋏角種",
+  "頭足種"
 ];
 
 const habitats = [
@@ -200,8 +260,8 @@ const monsters = [
     "alias": "火竜",
     "category": "飛竜種",
     "habitat": ["緋の森"],
-    "element": ["火", "毒"],
-    "valids": {
+    "enemy_element": ["火", "毒"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -227,8 +287,8 @@ const monsters = [
     "alias": "雌火竜",
     "category": "飛竜種",
     "habitat": ["緋の森"],
-    "element": ["火", "毒"],
-    "valids": {
+    "enemy_element": ["火", "毒"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -254,8 +314,8 @@ const monsters = [
     "alias": "煌雷竜",
     "category": "飛竜種",
     "habitat": ["隔ての砂原"],
-    "element": ["雷"],
-    "valids": {
+    "enemy_element": ["雷"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -281,8 +341,35 @@ const monsters = [
     "alias": "怪鳥",
     "category": "鳥竜種",
     "habitat": ["緋の森"],
-    "element": ["火"],
-    "valids": {
+    "enemy_element": ["火"],
+    "valid_element": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  },
+  {
+    "name": "ゲリョス",
+    "alias": "毒怪鳥",
+    "category": "鳥竜種",
+    "habitat": ["隔ての砂原"],
+    "enemy_element": ["毒"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -308,8 +395,8 @@ const monsters = [
     "alias": "炎尾竜",
     "category": "獣竜種",
     "habitat": ["隔ての砂原"],
-    "element": ["火"],
-    "valids": {
+    "enemy_element": ["火"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -335,8 +422,8 @@ const monsters = [
     "alias": "沼噴竜",
     "category": "獣竜種",
     "habitat": ["油涌き谷"],
-    "element": [""],
-    "valids": {
+    "enemy_element": [""],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -362,8 +449,8 @@ const monsters = [
     "alias": "沙海竜",
     "category": "海竜種",
     "habitat": ["隔ての砂原"],
-    "element": [""],
-    "valids": {
+    "enemy_element": [""],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -389,8 +476,8 @@ const monsters = [
     "alias": "波衣竜",
     "category": "海竜種",
     "habitat": ["緋の森"],
-    "element": ["水"],
-    "valids": {
+    "enemy_element": ["水"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -416,8 +503,8 @@ const monsters = [
     "alias": "桃毛獣",
     "category": "牙獣種",
     "habitat": ["緋の森"],
-    "element": [""],
-    "valids": {
+    "enemy_element": ["悪臭"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -443,8 +530,8 @@ const monsters = [
     "alias": "闢獣",
     "category": "牙獣種",
     "habitat": ["隔ての砂原", "緋の森"],
-    "element": [],
-    "valids": {
+    "enemy_element": [],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -470,8 +557,8 @@ const monsters = [
     "alias": "赫猿獣",
     "category": "牙獣種",
     "habitat": ["油涌き谷"],
-    "element": [""],
-    "valids": {
+    "enemy_element": [""],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -497,8 +584,8 @@ const monsters = [
     "alias": "纏蛙",
     "category": "両生種",
     "habitat": ["隔ての砂原"],
-    "element": [""],
-    "valids": {
+    "enemy_element": [""],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -524,8 +611,8 @@ const monsters = [
     "alias": "刺花蜘蛛",
     "category": "鋏角種",
     "habitat": ["緋の森"],
-    "element": [""],
-    "valids": {
+    "enemy_element": ["麻痺"],
+    "valid_element": {
       "火": "◎",
       "水": "◯",
       "雷": "○",
@@ -546,4 +633,31 @@ const monsters = [
     },
     "remark": ""
   },
+  {
+    "name": "ヌ・エグドラ",
+    "alias": "獄焔蛸",
+    "category": "頭足種",
+    "habitat": ["油涌き谷"],
+    "enemy_element": ["火"],
+    "valid_element": {
+      "火": "◎",
+      "水": "◯",
+      "雷": "○",
+      "氷": "△",
+      "龍": "✕",
+      "毒": "★",
+      "麻痺": "☆",
+      "睡眠": "◎",
+      "爆破": "◎",
+      "減気": "◎",
+      "気絶": "◎",
+      "落罠": "◎",
+      "シ罠": "◎",
+      "閃光": "◎",
+      "音": "◎",
+      "糞": "◎",
+      "肉": "◎"
+    },
+    "remark": ""
+  }
 ];
