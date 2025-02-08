@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./main.css";
+import data from "./data/jp/wilds.json";
 
 // Title
 function Title() {
@@ -18,7 +19,7 @@ function Display({refine}) {
 
   let refinedMonsters = [];
   if (!isDefault) {
-    for (const monster of monsters) {
+    for (const monster of data.monsters) {
 
       // このモンスターが必要か
       let isRequired = true;
@@ -73,7 +74,7 @@ function Display({refine}) {
   return (
     <div id="display">
       {isDefault ?
-        categories.map((category) => (
+        data.categories.map((category) => (
           <div key={category} className="category">
             <div className="category_name">{category}</div>
             <CategoryMonsterList key={category} category={category} />
@@ -94,7 +95,7 @@ function Display({refine}) {
 function CategoryMonsterList({category}) {
   return (
     <div className="monsters">
-      {monsters.filter(monster => monster.category === category).map((monster) => 
+      {data.monsters.filter(monster => monster.category === category).map((monster) => 
         <Monster key={monster.name} monster={monster} />
       )}
     </div>
@@ -137,25 +138,25 @@ function Control({onSelectChange, refine, setRefine}) {
         <div className="control_select_wrap control_category">
           <select name="category" value={refine[0]} onChange={e => onSelectChange(0, e.target.value)}>
             <option value="null">種族を選択</option>
-            {categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
+            {data.categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_habitat">
           <select name="habitat" value={refine[1]} onChange={e => onSelectChange(1, e.target.value)}>
             <option value="null">生息地を選択</option>
-            {habitats.map((habitat, index) => <option key={index} value={habitat}>{habitat}</option>)}
+            {data.habitats.map((habitat, index) => <option key={index} value={habitat}>{habitat}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_enemy_element">
           <select name="enemy_element" value={refine[2]} onChange={e => onSelectChange(2, e.target.value)}>
             <option value="null">攻撃属性を選択</option>
-            {enemy_elements.map((enemy_element, index) => <option key={index} value={enemy_element}>{enemy_element}</option>)}
+            {data.enemy_elements.map((enemy_element, index) => <option key={index} value={enemy_element}>{enemy_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
           <select name="valid_element" value={refine[3]} onChange={e => onSelectChange(3, e.target.value)}>
             <option value="null">弱点属性を選択</option>
-            {valid_elements.map((valid_element, index) => <option key={index} value={valid_element}>{valid_element}</option>)}
+            {data.valid_elements.map((valid_element, index) => <option key={index} value={valid_element}>{valid_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
@@ -215,449 +216,3 @@ export function Main() {
     </main>
   );
 }
-
-const categories = [
-  "飛竜種",
-  "鳥竜種",
-  "獣竜種",
-  "海竜種",
-  "牙獣種",
-  "両生種",
-  "鋏角種",
-  "頭足種"
-];
-
-const habitats = [
-  "隔ての砂原",
-  "緋の森",
-  "油涌き谷"
-];
-
-const valid_elements = [
-  "火",
-  "水",
-  "雷",
-  "氷",
-  "龍"
-];
-
-const enemy_elements = [
-  "火",
-  "水",
-  "雷",
-  "氷",
-  "龍",
-  "毒",
-  "麻痺",
-  "睡眠",
-  "爆破",
-  "悪臭"
-];
-
-const monsters = [
-  {
-    "name": "リオレウス",
-    "alias": "火竜",
-    "category": "飛竜種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["火", "毒"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": "あああああああああああああああ"
-  },
-  {
-    "name": "リオレイア",
-    "alias": "雌火竜",
-    "category": "飛竜種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["火", "毒"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "レ・ダウ",
-    "alias": "煌雷竜",
-    "category": "飛竜種",
-    "habitat": ["隔ての砂原"],
-    "enemy_element": ["雷"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "イャンクック",
-    "alias": "怪鳥",
-    "category": "鳥竜種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["火"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ゲリョス",
-    "alias": "毒怪鳥",
-    "category": "鳥竜種",
-    "habitat": ["隔ての砂原"],
-    "enemy_element": ["毒"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ケマトリス",
-    "alias": "炎尾竜",
-    "category": "獣竜種",
-    "habitat": ["隔ての砂原"],
-    "enemy_element": ["火"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ププロポル",
-    "alias": "沼噴竜",
-    "category": "獣竜種",
-    "habitat": ["油涌き谷"],
-    "enemy_element": [""],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "バーラハーラ",
-    "alias": "沙海竜",
-    "category": "海竜種",
-    "habitat": ["隔ての砂原"],
-    "enemy_element": [""],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ウズ・トゥナ",
-    "alias": "波衣竜",
-    "category": "海竜種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["水"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ババコンガ",
-    "alias": "桃毛獣",
-    "category": "牙獣種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["悪臭"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ドシャグマ",
-    "alias": "闢獣",
-    "category": "牙獣種",
-    "habitat": ["隔ての砂原", "緋の森"],
-    "enemy_element": [],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "アジャラカン",
-    "alias": "赫猿獣",
-    "category": "牙獣種",
-    "habitat": ["油涌き谷"],
-    "enemy_element": [""],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "チャタカブラ",
-    "alias": "纏蛙",
-    "category": "両生種",
-    "habitat": ["隔ての砂原"],
-    "enemy_element": [""],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ラバラ・バリナ",
-    "alias": "刺花蜘蛛",
-    "category": "鋏角種",
-    "habitat": ["緋の森"],
-    "enemy_element": ["麻痺"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  },
-  {
-    "name": "ヌ・エグドラ",
-    "alias": "獄焔蛸",
-    "category": "頭足種",
-    "habitat": ["油涌き谷"],
-    "enemy_element": ["火"],
-    "valid_element": {
-      "火": "◎",
-      "水": "◯",
-      "雷": "○",
-      "氷": "△",
-      "龍": "✕",
-      "毒": "★",
-      "麻痺": "☆",
-      "睡眠": "◎",
-      "爆破": "◎",
-      "減気": "◎",
-      "気絶": "◎",
-      "落罠": "◎",
-      "シ罠": "◎",
-      "閃光": "◎",
-      "音": "◎",
-      "糞": "◎",
-      "肉": "◎"
-    },
-    "remark": ""
-  }
-];
