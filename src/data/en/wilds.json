@@ -1,10 +1,10 @@
 {
-  "links" : [
-    {
-      "name": "English",
-      "url": "/en"
-    }
-  ],
+    "links" : [
+        {
+          "name": "日本語",
+          "url": "/"
+        }
+      ],
     "categories" : [
         "飛竜種",
         "鳥竜種",
@@ -44,7 +44,7 @@
     ],
     "monsters" : [
         {
-            "name": "リオレウス",
+            "name": "リオsレウス",
             "alias": "火竜",
             "category": "飛竜種",
             "habitat": ["緋の森"],

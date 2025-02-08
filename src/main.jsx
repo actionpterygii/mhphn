@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
 import "./main.css";
-import data from "./data/jp/wilds.json";
+import wilds_jp from "./data/jp/wilds.json";
+import wilds_en from "./data/en/wilds.json";
 
 // Title
 function Title() {
@@ -10,7 +12,7 @@ function Title() {
 }
 
 // Display
-function Display({refine}) {
+function Display({refine, data}) {
 
   // 全部の値が'null'の場合true
   const isDefault = (function(arr) {
@@ -77,7 +79,7 @@ function Display({refine}) {
         data.categories.map((category) => (
           <div key={category} className="category">
             <div className="category_name">{category}</div>
-            <CategoryMonsterList key={category} category={category} />
+            <CategoryMonsterList key={category} category={category} monsters={data.monsters} />
           </div>
         ))
         :
@@ -92,10 +94,10 @@ function Display({refine}) {
   );
 }
 
-function CategoryMonsterList({category}) {
+function CategoryMonsterList({category, monsters}) {
   return (
     <div className="monsters">
-      {data.monsters.filter(monster => monster.category === category).map((monster) => 
+      {monsters.filter(monster => monster.category === category).map((monster) => 
         <Monster key={monster.name} monster={monster} />
       )}
     </div>
@@ -123,7 +125,7 @@ function Monster({monster}) {
 }
 
 // Control
-function Control({onSelectChange, refine, setRefine}) {
+function Control({onSelectChange, refine, setRefine, data, select}) {
   // 右下メニューの開閉
   const [isMenuHidden, setIsMenuHidden] = useState(true);
 
@@ -137,30 +139,30 @@ function Control({onSelectChange, refine, setRefine}) {
       <div id="control_panel">
         <div className="control_select_wrap control_category">
           <select name="category" value={refine[0]} onChange={e => onSelectChange(0, e.target.value)}>
-            <option value="null">種族を選択</option>
+            <option value="null">{select[0]}</option>
             {data.categories.map((category, index) => <option key={index} value={category}>{category}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_habitat">
           <select name="habitat" value={refine[1]} onChange={e => onSelectChange(1, e.target.value)}>
-            <option value="null">生息地を選択</option>
+            <option value="null">{select[1]}</option>
             {data.habitats.map((habitat, index) => <option key={index} value={habitat}>{habitat}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_enemy_element">
           <select name="enemy_element" value={refine[2]} onChange={e => onSelectChange(2, e.target.value)}>
-            <option value="null">攻撃属性を選択</option>
+            <option value="null">{select[2]}</option>
             {data.enemy_elements.map((enemy_element, index) => <option key={index} value={enemy_element}>{enemy_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
           <select name="valid_element" value={refine[3]} onChange={e => onSelectChange(3, e.target.value)}>
-            <option value="null">弱点属性を選択</option>
+            <option value="null">{select[3]}</option>
             {data.valid_elements.map((valid_element, index) => <option key={index} value={valid_element}>{valid_element}</option>)}
           </select>
         </div>
         <div className="control_select_wrap control_valid_element">
-          <button type="button" onClick={clearAllSelect}>クリア</button>
+          <button type="button" onClick={clearAllSelect}>{select[4]}</button>
         </div>
       </div>
       <div id="menu_button" onClick={() => setIsMenuHidden(false)}>
@@ -174,7 +176,11 @@ function Control({onSelectChange, refine, setRefine}) {
       <div className={`spotlight_fill${isMenuHidden ? ' spotlight_fill__off' : ''}`} onClick={() => setIsMenuHidden(true)}>
         <div id="menu" onClick={(e) => e.stopPropagation()}>
           <div id="menu_links">
-            <a href="" className="menu_link">English</a>
+            {data.links.map((link, index) => (
+              <Link key={index} to={link.url} className="menu_link" onClick={() => setIsMenuHidden(true)}>
+                {link.name}
+              </Link>
+            ))}
             <a href="https://www.actionpterygii.com/" className="menu_link actionpterygii">actionpterygii</a>
           </div>
           <div id="menu_close" onClick={() => setIsMenuHidden(true)}></div>
@@ -185,10 +191,44 @@ function Control({onSelectChange, refine, setRefine}) {
 }
 
 // Main
-export function Main() {
+function Main({data}) {
+
+  const location = useLocation();
+
+  const [select, setSelect] = useState([
+    '種族を選択',
+    '生息地を選択',
+    '攻撃属性を選択',
+    '弱点属性を選択',
+    'クリア'
+  ]);
+
+  useEffect(() => {
+    if (location.pathname.endsWith('/en')) {
+      document.documentElement.lang = 'en';
+      document.querySelector('meta[name="description"]').setAttribute('content', 'english description');
+      setSelect([
+        'Select Class',
+        'Select Habitat',
+        'Select Attack Element',
+        'Select Weak Element',
+        'Clear'
+      ]);
+    } else {
+      document.documentElement.lang = 'ja';
+      document.querySelector('meta[name="description"]').setAttribute('content', 'にほんご');
+      setSelect([
+        '種族を選択',
+        '生息地を選択',
+        '攻撃属性を選択',
+        '弱点属性を選択',
+        'クリア'
+      ]);
+    }
+  }, [location.pathname]);
 
   // 読み込み時に実行
-  React.useEffect(() => {
+  useEffect(() => {
     // バーの有無で変わったりするスマホでも対応できるような縦いっぱい
     const setVh = () => document.documentElement.style.setProperty('--vh', window.innerHeight + 'px');
     window.addEventListener('load', setVh);
@@ -211,8 +251,19 @@ export function Main() {
   return (
     <main id="main">
       <Title />
-      <Display refine={refine} />
-      <Control onSelectChange={handleSelectChange} refine={refine} setRefine={setRefine} />
+      <Display refine={refine} data={data} />
+      <Control onSelectChange={handleSelectChange} refine={refine} setRefine={setRefine} data={data} select={select} />
     </main>
+  );
+}
+
+export function Root() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/en" element={<Main data={wilds_en} />} />
+        <Route path="/" element={<Main data={wilds_jp} />} />
+      </Routes>
+    </Router>
   );
 }
