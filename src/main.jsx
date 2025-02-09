@@ -7,7 +7,7 @@ import wilds_en from "./data/en/wilds.json";
 // Title
 function Title() {
   return (
-    <div id="title">MHPHN</div>
+    <h1 id="title">モンスターハンターワイルズ 弱点一覧</h1>
   );
 }
 
@@ -78,7 +78,7 @@ function Display({refine, data}) {
       {isDefault ?
         data.categories.map((category) => (
           <div key={category} className="category">
-            <div className="category_name">{category}</div>
+            <h2 className="category_name">{category}</h2>
             <CategoryMonsterList key={category} category={category} monsters={data.monsters} />
           </div>
         ))
@@ -108,7 +108,7 @@ function Monster({monster}) {
   return (
     <div key={monster.name} className="monster">
       <div className="monster_head">
-        <div className="monster_name">{monster.name}</div>
+        <h3 className="monster_name">{monster.name}</h3>
         <div className="monster_alias"> ({monster.alias})</div>
       </div>
       <div className="monster_body">
@@ -206,7 +206,9 @@ function Main({data}) {
   useEffect(() => {
     if (location.pathname.endsWith('/en')) {
       document.documentElement.lang = 'en';
-      document.querySelector('meta[name="description"]').setAttribute('content', 'english description');
+      document.title = 'MONSTER HUNTER WILDS Weakness List | MHPHN';
+      document.querySelector('meta[name="description"]').setAttribute('content', 'You can quickly find the weak points of monsters in Monster Hunter Wilds by narrowing down your search based on race, habitat, and other criteria.');
+      document.getElementById('title').textContent = 'MONSTER HUNTER WILDS Weakness List';
       setSelect([
         'Select Class',
         'Select Habitat',
@@ -217,7 +219,9 @@ function Main({data}) {
       document.body.classList.add('en');
     } else {
       document.documentElement.lang = 'ja';
-      document.querySelector('meta[name="description"]').setAttribute('content', 'にほんご');
+      document.title = 'モンスターハンターワイルズ 弱点一覧 | MHPHN';
+      document.querySelector('meta[name="description"]').setAttribute('content', 'モンスターハンターワイルズのモンスターの弱点などを種族,生息地などの条件を元に絞り込んで素早く参照することができます。');
+      document.getElementById('title').textContent = 'モンスターハンターワイルズ 弱点一覧';
       setSelect([
         '種族を選択',
         '生息地を選択',

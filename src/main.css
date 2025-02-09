@@ -3,7 +3,7 @@
   --main-border: #aaaaaa;
 
   /* title */
-  --title-height: 50px;
+  --title-height: 30px;
 
   --title-background: #ffffff;
   --title-text: #000000;
@@ -84,12 +84,13 @@ main#main {
   /* border: solid 2px #aaaaaa; */
 }
 
-div#title {
+h1#title {
   height: var(--title-height);
   /* height: 10%; */
   background-color: var(--title-background);
   color: var(--title-text);
   font-size: 20px;
+  padding-left: 5px;
 }
 
 /* Display */
