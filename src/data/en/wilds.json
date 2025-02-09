@@ -6,599 +6,600 @@
     }
   ],
   "categories": [
-    "飛竜種",
-    "鳥竜種",
-    "獣竜種",
-    "海竜種",
-    "牙獣種",
-    "両生種",
-    "鋏角種",
-    "頭足種",
+    "Flying Wyvern",
+    "Bird Wyvern",
+    "Brute Wyvern",
+    "Leviathan",
+    "Fanged Beast",
+    "Amphibian",
+    "Temnoceran",
+    "Cephalopoda",
     "???"
   ],
   "habitats": [
-    "隔ての砂原",
-    "緋の森",
-    "油涌き谷",
-    "氷霧の断崖"
+    "Windward Plains",
+    "Scarlet Forest",
+    "Oilwell Basin",
+    "Iceshard Cliffs"
   ],
   "valid_elements": [
-    "火",
-    "水",
-    "雷",
-    "氷",
-    "龍"
+    "Fire",
+    "Water",
+    "Thunder",
+    "Ice",
+    "Dragon"
   ],
   "enemy_elements": [
-    "火",
-    "水",
-    "雷",
-    "氷",
-    "龍",
-    "毒",
-    "麻痺",
-    "睡眠",
-    "爆破",
-    "悪臭",
-    "狂竜症"
+    "Fire",
+    "Water",
+    "Thunder",
+    "Ice",
+    "Dragon",
+    "Poison",
+    "Paralysis",
+    "Sleep",
+    "Blastblight",
+    "Stench",
+    "Frenzy Virus"
   ],
   "monsters": [
     {
-      "name": "リオsレウス",
-      "alias": "火竜",
-      "category": "飛竜種",
+      "name": "Rathalos",
+      "alias": "Fire Wyvern",
+      "category": "Flying Wyvern",
       "habitat": [
-        "緋の森"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "火",
-        "毒"
+        "Fire",
+        "Poison"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
-      "remark": "あああああああああああああああ"
+      "remark": "aaaaaaaaaaaaaaaaaaaaaaaaa"
     },
     {
-      "name": "リオレイア",
-      "alias": "雌火竜",
-      "category": "飛竜種",
+      "name": "Rathian",
+      "alias": "Female Fire Wyvern",
+      "category": "Flying Wyvern",
       "habitat": [
-        "緋の森"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "火",
-        "毒"
+        "Fire",
+        "Poison"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
-      },
-      "remark": ""
-    },
-    {
-      "name": "レ・ダウ",
-      "alias": "煌雷竜",
-      "category": "飛竜種",
-      "habitat": [
-        "隔ての砂原"
-      ],
-      "enemy_element": [
-        "雷"
-      ],
-      "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "イャンクック",
-      "alias": "怪鳥",
-      "category": "鳥竜種",
+      "name": "Rey Dau",
+      "alias": "Bright Thunder Wyvern",
+      "category": "Flying Wyvern",
       "habitat": [
-        "緋の森"
+        "Windward Plains"
       ],
       "enemy_element": [
-        "火"
+        "Thunder"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ゲリョス",
-      "alias": "毒怪鳥",
-      "category": "鳥竜種",
+      "name": "Yian Kut-Ku",
+      "alias": "Strange Bird",
+      "category": "Bird Wyvern",
       "habitat": [
-        "隔ての砂原"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "毒"
+        "Fire"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ケマトリス",
-      "alias": "炎尾竜",
-      "category": "獣竜種",
+      "name": "Gypceros",
+      "alias": "Poison Strange Bird",
+      "category": "Bird Wyvern",
       "habitat": [
-        "隔ての砂原"
+        "Windward Plains"
       ],
       "enemy_element": [
-        "火"
+        "Poison"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ププロポル",
-      "alias": "沼噴竜",
-      "category": "獣竜種",
+      "name": "Quematrice",
+      "alias": "Flame Tail Wyvern",
+      "category": "Brute Wyvern",
       "habitat": [
-        "油涌き谷"
+        "Windward Plains"
+      ],
+      "enemy_element": [
+        "Fire"
+      ],
+      "valid_element": {
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Rompopolo",
+      "alias": "Swamp Spouting Wyvern",
+      "category": "Brute Wyvern",
+      "habitat": [
+        "Oilwell Basin"
       ],
       "enemy_element": [
         ""
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "バーラハーラ",
-      "alias": "沙海竜",
-      "category": "海竜種",
+      "name": "Balahara",
+      "alias": "Sand Sea Wyvern",
+      "category": "Leviathan",
       "habitat": [
-        "隔ての砂原"
+        "Windward Plains"
       ],
       "enemy_element": [
         ""
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ヒラバミ",
-      "alias": "風鋏竜",
-      "category": "海竜種",
+      "name": "Hirabami",
+      "alias": "Wind Scissors Wyvern",
+      "category": "Leviathan",
       "habitat": [
-        "氷霧の断崖"
+        "Iceshard Cliffs"
       ],
       "enemy_element": [
-        ""
+        "Ice"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ウズ・トゥナ",
-      "alias": "波衣竜",
-      "category": "海竜種",
+      "name": "Uth Duna",
+      "alias": "Wave Dress Wyvern",
+      "category": "Leviathan",
       "habitat": [
-        "緋の森"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "水"
+        "Water"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ババコンガ",
-      "alias": "桃毛獣",
-      "category": "牙獣種",
+      "name": "Congalala",
+      "alias": "Pink Fur Beast",
+      "category": "Fanged Beast",
       "habitat": [
-        "緋の森"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "悪臭"
+        "Stench"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ドシャグマ",
-      "alias": "闢獣",
-      "category": "牙獣種",
+      "name": "Doshaguma",
+      "alias": "Pioneer Beast",
+      "category": "Fanged Beast",
       "habitat": [
-        "隔ての砂原",
-        "緋の森"
+        "Windward Plains",
+        "Scarlet Forest"
       ],
       "enemy_element": [],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "アジャラカン",
-      "alias": "赫猿獣",
-      "category": "牙獣種",
+      "name": "Ajarakan",
+      "alias": "Glowing Monkey Beast",
+      "category": "Fanged Beast",
       "habitat": [
-        "油涌き谷"
+        "Oilwell Basin"
       ],
       "enemy_element": [
         ""
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "チャタカブラ",
-      "alias": "纏蛙",
-      "category": "両生種",
+      "name": "Chatacabra",
+      "alias": "Binding Frog",
+      "category": "Amphibian",
       "habitat": [
-        "隔ての砂原"
+        "Windward Plains"
       ],
       "enemy_element": [
         ""
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ラバラ・バリナ",
-      "alias": "刺花蜘蛛",
-      "category": "鋏角種",
+      "name": "Lala Barina",
+      "alias": "Thorny Flower Spider",
+      "category": "Temnoceran",
       "habitat": [
-        "緋の森"
+        "Scarlet Forest"
       ],
       "enemy_element": [
-        "麻痺"
+        "Paralysis"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ネルスキュラ",
-      "alias": "影蜘蛛",
-      "category": "鋏角種",
+      "name": "Nerscylla",
+      "alias": "Shadow Spider",
+      "category": "Temnoceran",
       "habitat": [
-        "氷霧の断崖"
+        "Iceshard Cliffs"
       ],
       "enemy_element": [
-        "毒"
+        "Poison",
+        "Sleep"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ヌ・エグドラ",
-      "alias": "獄焔蛸",
-      "category": "頭足種",
+      "name": "Nu Udra",
+      "alias": "Hell Flame Octopus",
+      "category": "Cephalopoda",
       "habitat": [
-        "油涌き谷"
+        "Oilwell Basin"
       ],
       "enemy_element": [
-        "火"
+        "Fire"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     },
     {
-      "name": "ゴア・マガラ",
-      "alias": "黒蝕竜",
+      "name": "Gore Magala",
+      "alias": "Black Eclipse Wyvern",
       "category": "???",
       "habitat": [
-        "隔ての砂原"
+        "Windward Plains"
       ],
       "enemy_element": [
-        "狂竜症"
+        "Frenzy Virus"
       ],
       "valid_element": {
-        "火": "◎",
-        "水": "◯",
-        "雷": "○",
-        "氷": "△",
-        "龍": "✕",
-        "毒": "★",
-        "麻痺": "☆",
-        "睡眠": "◎",
-        "爆破": "◎",
-        "減気": "◎",
-        "気絶": "◎",
-        "落罠": "◎",
-        "シ罠": "◎",
-        "閃光": "◎",
-        "音": "◎",
-        "糞": "◎",
-        "肉": "◎"
+        "Fi": "◎",
+        "Wa": "◯",
+        "Th": "○",
+        "Ic": "△",
+        "Dr": "✕",
+        "Po": "★",
+        "Pa": "☆",
+        "Sl": "◎",
+        "Bl": "◎",
+        "Ex": "◎",
+        "St": "◎",
+        "PiTr": "◎",
+        "ShTr": "◎",
+        "FlBo": "◎",
+        "SoBo": "◎",
+        "DuBo": "◎",
+        "Me": "◎"
       },
       "remark": ""
     }

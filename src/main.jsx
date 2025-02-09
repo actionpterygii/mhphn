@@ -59,7 +59,7 @@ function Display({refine, data}) {
       // 弱点属性
       const valid_element = refine[3];
       if (valid_element !== "null" && isRequired) {
-        if (monster["valid_element"][valid_element] === "◎") {
+        if (monster["valid_element"][valid_element.slice(0,2)] === "◎") {
           isRequired = true;
         } else {
           isRequired = false;
@@ -109,7 +109,7 @@ function Monster({monster}) {
     <div key={monster.name} className="monster">
       <div className="monster_head">
         <div className="monster_name">{monster.name}</div>
-        <div className="monster_alias">({monster.alias})</div>
+        <div className="monster_alias"> ({monster.alias})</div>
       </div>
       <div className="monster_body">
         {Object.keys(monster.valid_element).map((head) => (
@@ -214,6 +214,7 @@ function Main({data}) {
         'Select Weak Element',
         'Clear'
       ]);
+      document.body.classList.add('en');
     } else {
       document.documentElement.lang = 'ja';
       document.querySelector('meta[name="description"]').setAttribute('content', 'にほんご');
@@ -224,6 +225,7 @@ function Main({data}) {
         '弱点属性を選択',
         'クリア'
       ]);
+      document.body.classList.remove('en');
     }
   }, [location.pathname]);
 

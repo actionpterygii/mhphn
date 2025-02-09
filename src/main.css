@@ -139,7 +139,7 @@ div.monster_name {
 }
 
 div.monster_alias {
-
+  margin-left: 10px;
 }
 
 div.monster_body {
@@ -213,6 +213,10 @@ div.valid:nth-child(16) div.valid_head {
 }
 div.valid:nth-child(17) div.valid_head {
   color: var(--display-niku);
+}
+body.en div.valid_head {
+  font-family: 'Courier New', Courier, monospace;
+  word-wrap: break-word;
 }
 
 div.valid_body {
