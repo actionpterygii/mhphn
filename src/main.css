@@ -15,44 +15,25 @@
   --display-table: #cccccc;
 
   --display-hi: #ff6622;
-  /* --display-hi: #FF4400; */
   --display-mizu: #66eeff;
-  /* --display-mizu: #88EEFF; */
   --display-kaminari: #ffcc44;
-  /* --display-kaminari: #FFFF00; */
   --display-koori: #44aaff;
-  /* --display-koori: #335599; */
   --display-ryu: #aaff99;
-  /* --display-ryu: #770011; */
-  /* --display-ryu: #6677BB; */
-  /* --display-ryu: #DD4466; */
 
   --display-doku: #dd99ee;
-  /* --display-doku: #9900bb; */
   --display-mahi: #ffff55;
-  /* --display-mahi: #FFFF00; */
   --display-suimin: #aaddff;
-  /* --display-suimin: #66cc44; */
   --display-bakuha: #ff8833;
-  /* --display-bakuha: #ff8833; */
   --display-genki: #4466ff;
-  /* --display-genki: #4466ff; */
 
   --display-kizetsu: #ffff55;
-  /* --display-kizetsu: #FFFF00; */
 
   --display-otoshiwana: #99ee99;
-  /* --display-otoshiwana: #33CC77; */
-  /* --display-shibirewana: #dd99ee; */
   --display-shibirewana: #F7F670;
-  /* --display-senkou: #ffff55; */
   --display-senkou: #EECC55;
   --display-oto: #bbbbbb;
-  /* --display-oto: #aaaaaa; */
   --display-koyashi: #ddcc33;
-  /* --display-koyashi: #885511; */
   --display-niku: #ff4444;
-  /* --display-niku: #FF5555; */
 
 
   /* control */
@@ -76,17 +57,15 @@
 
 }
 
-main#main {
+#main {
   max-width: 800px;
   height: var(--vh);
   margin: 0 auto;
   background-color: var(--title-background);
-  /* border: solid 2px #aaaaaa; */
 }
 
-h1#title {
+#title {
   height: var(--title-height);
-  /* height: 10%; */
   background-color: var(--title-background);
   color: var(--title-text);
   font-size: 20px;
@@ -94,17 +73,17 @@ h1#title {
 }
 
 /* Display */
-div#display {
-  /* height: 65%; */
+#display {
   height: calc(100% - (var(--title-height) + var(--control-height)));
   background-color: var(--display-background);
   color: var(--display-text);
   font-size: 16px;
   overflow-y:scroll;
   overflow-x: hidden;
-  /* scrollbar-color: red orange;
-  scrollbar-width: thin; */
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  table-layout: 10px;
   margin-left: 3px;
   margin-right: 3px;
   border-radius: 5px;
@@ -112,121 +91,126 @@ div#display {
   -ms-overflow-style: none;
 }
 
-div#display::-webkit-scrollbar{
+#display::-webkit-scrollbar{
   display: none;
 }
 
-div.category {
+.category {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-div.monsters {
+.category_name {
+  font-size: 20px;
+}
+
+.monsters {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-div.monster {
+.monster {
   padding-top: 5px;
   padding-bottom: 5px;
 }
 
-div.monster_head {
+.monster_head {
   display: flex;
 }
 
-div.monster_name {
-
+.monster_alias {
 }
 
-div.monster_alias {
-  margin-left: 10px;
+.monster_name {
+  margin-left: 15px;
 }
 
-div.monster_body {
+.monster_body {
   display: flex;
   flex-wrap: wrap;
 }
 
-div.valid {
+.valid {
   border: solid 1px var(--display-table);
 }
+.valid:not(:last-child) {
+  border-right: none;
+}
 
-div.valid div {
+.valid div {
   width: 20px;
   text-align: center;
 }
 
-div.valid_head {
+.valid_head {
+  font-family: 'Courier New', Courier, monospace;
+  word-wrap: break-word;
   line-height: 16px;
   font-size: 16px;
-  padding-top: 3px;
+  padding-top: 4px;
   height: 37px;
   border-bottom: solid 1px var(--display-table);
 }
-div.valid:nth-child(1) div.valid_head {
+.valid:nth-child(1) .valid_head {
   color: var(--display-hi);
 }
-div.valid:nth-child(2) div.valid_head {
+.valid:nth-child(2) .valid_head {
   color: var(--display-mizu);
 }
-div.valid:nth-child(3) div.valid_head {
+.valid:nth-child(3) .valid_head {
   color: var(--display-kaminari);
 }
-div.valid:nth-child(4) div.valid_head {
+.valid:nth-child(4) .valid_head {
   color: var(--display-koori);
 }
-div.valid:nth-child(5) div.valid_head {
+.valid:nth-child(5) .valid_head {
   color: var(--display-ryu);
 }
-div.valid:nth-child(6) div.valid_head {
+.valid:nth-child(6) .valid_head {
   color: var(--display-doku);
 }
-div.valid:nth-child(7) div.valid_head {
+.valid:nth-child(7) .valid_head {
   color: var(--display-mahi);
 }
-div.valid:nth-child(8) div.valid_head {
+.valid:nth-child(8) .valid_head {
   color: var(--display-suimin);
 }
-div.valid:nth-child(9) div.valid_head {
+.valid:nth-child(9) .valid_head {
   color: var(--display-bakuha);
 }
-div.valid:nth-child(10) div.valid_head {
+.valid:nth-child(10) .valid_head {
   color: var(--display-genki);
 }
-div.valid:nth-child(11) div.valid_head {
+.valid:nth-child(11) .valid_head {
   color: var(--display-kizetsu);
 }
-div.valid:nth-child(12) div.valid_head {
+.valid:nth-child(12) .valid_head {
   color: var(--display-otoshiwana);
 }
-div.valid:nth-child(13) div.valid_head {
+.valid:nth-child(13) .valid_head {
   color: var(--display-shibirewana);
 }
-div.valid:nth-child(14) div.valid_head {
+.valid:nth-child(14) .valid_head {
   color: var(--display-senkou);
 }
-div.valid:nth-child(15) div.valid_head {
+.valid:nth-child(15) .valid_head {
   color: var(--display-oto);
 }
-div.valid:nth-child(16) div.valid_head {
+.valid:nth-child(16) .valid_head {
   color: var(--display-koyashi);
 }
-div.valid:nth-child(17) div.valid_head {
+.valid:nth-child(17) .valid_head {
   color: var(--display-niku);
 }
-body.en div.valid_head {
-  font-family: 'Courier New', Courier, monospace;
-  word-wrap: break-word;
-}
 
-div.valid_body {
+.valid_body {
+  font-family: monospace;
   height: 20px;
+  padding-top: 2px;
 }
 
 /* Control */
-div#control {
-  /* height: 25%; */
+#control {
   height: var(--control-height);
   background-color: var(--control-background);
   color: var(--control-text);
@@ -234,10 +218,10 @@ div#control {
   position: relative;
   margin-left: 10px;
   margin-right: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
-div.spotlight_fill {
+.spotlight_fill {
   position:fixed;
   top:0;
   left:0;
@@ -252,39 +236,39 @@ div.spotlight_fill {
   transition: 0.4s;
 }
 /* モーダル */
-div.spotlight_fill__off {
+.spotlight_fill__off {
   visibility: hidden;
   opacity: 0;
 }
 
-div#control_panel {
+#control_panel {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 80%;
 }
 
-div.control_select_wrap {
+.control_select_wrap {
   width: 50%;
+  padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
 }
 
-div#control_panel select {
+#control_panel select {
   width: 100%;
   height: 30px;
 }
 
-div#menu_button {
-  /* position: absolute; */
+#menu_button {
   position: absolute;
   bottom: 5px;
   right: 5px;
   cursor: pointer;
 }
 
-div#menu_icon {
+#menu_icon {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -292,20 +276,20 @@ div#menu_icon {
   height: 25px;
 }
 
-div.menu_icon_bar {
+.menu_icon_bar {
   height: 3px;
   width: 31px;
   background-color: var(--control-ui-light);
 }
 
-div#menu_text {
+#menu_text {
   width: 31px;
   font-size: 10px;
   font-weight: bold;
   color: var(--control-ui-light);
 }
 
-div#menu {
+#menu {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -316,23 +300,23 @@ div#menu {
   box-shadow: 0 2px 10px rgba(0,0,0,.2);
 }
 
-div#menu_links {
+#menu_links {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
   margin-bottom: 10px;
 }
 
-a.menu_link {
+.menu_link {
   color: var(--control-link);
   font-size: 20px;
 }
 
-a.actionpterygii {
+.actionpterygii {
   color: var(--actionpterygii);
 }
 
-div#menu_close {
+#menu_close {
   display: block;
   position: relative;
   width: 20px;
@@ -341,8 +325,8 @@ div#menu_close {
   cursor: pointer;
 }
    
-div#menu_close::before,
-div#menu_close::after {
+#menu_close::before,
+#menu_close::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -352,10 +336,10 @@ div#menu_close::after {
   background: var(--control-ui-light);
 }
   
-div#menu_close::before {
+#menu_close::before {
   transform: translate(-50%,-50%) rotate(45deg);
 }
   
-div#menu_close::after {
+#menu_close::after {
   transform: translate(-50%,-50%) rotate(-45deg);
 }

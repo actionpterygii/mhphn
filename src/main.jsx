@@ -7,7 +7,7 @@ import wilds_en from "./data/en/wilds.json";
 // Title
 function Title() {
   return (
-    <h1 id="title">モンスターハンターワイルズ 弱点一覧</h1>
+    <h1 id="title">MH:ワイルズ 弱点一覧</h1>
   );
 }
 
@@ -108,8 +108,8 @@ function Monster({monster}) {
   return (
     <div key={monster.name} className="monster">
       <div className="monster_head">
+        <div className="monster_alias">{monster.alias}</div>
         <h3 className="monster_name">{monster.name}</h3>
-        <div className="monster_alias"> ({monster.alias})</div>
       </div>
       <div className="monster_body">
         {Object.keys(monster.valid_element).map((head) => (
@@ -177,7 +177,7 @@ function Control({onSelectChange, refine, setRefine, data, select}) {
         <div id="menu" onClick={(e) => e.stopPropagation()}>
           <div id="menu_links">
             {data.links.map((link, index) => (
-              <Link key={index} to={link.url} className="menu_link" onClick={() => setIsMenuHidden(true)}>
+              <Link key={index} to={link.url} className="menu_link" onClick={() => {setIsMenuHidden(true); clearAllSelect();}}>
                 {link.name}
               </Link>
             ))}
@@ -208,12 +208,12 @@ function Main({data}) {
       document.documentElement.lang = 'en';
       document.title = 'MONSTER HUNTER WILDS Weakness List | MHPHN';
       document.querySelector('meta[name="description"]').setAttribute('content', 'You can quickly find the weak points of monsters in Monster Hunter Wilds by narrowing down your search based on race, habitat, and other criteria.');
-      document.getElementById('title').textContent = 'MONSTER HUNTER WILDS Weakness List';
+      document.getElementById('title').textContent = 'MH:WILDS Weakness List';
       setSelect([
-        'Select Class',
-        'Select Habitat',
-        'Select Attack Element',
-        'Select Weak Element',
+        'Sel Class',
+        'Sel Habitat',
+        'Sel Attack Element',
+        'Sel Weak Element',
         'Clear'
       ]);
       document.body.classList.add('en');
@@ -221,7 +221,7 @@ function Main({data}) {
       document.documentElement.lang = 'ja';
       document.title = 'モンスターハンターワイルズ 弱点一覧 | MHPHN';
       document.querySelector('meta[name="description"]').setAttribute('content', 'モンスターハンターワイルズのモンスターの弱点などを種族,生息地などの条件を元に絞り込んで素早く参照することができます。');
-      document.getElementById('title').textContent = 'モンスターハンターワイルズ 弱点一覧';
+      document.getElementById('title').textContent = 'MH:ワイルズ 弱点一覧';
       setSelect([
         '種族を選択',
         '生息地を選択',
