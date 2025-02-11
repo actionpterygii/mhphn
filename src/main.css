@@ -205,9 +205,26 @@
 
 .valid_body {
   font-family: monospace;
+  /* font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3"; */
   height: 20px;
-  padding-top: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  /* padding-top: -1px; */
+  /* font-size: 15px; */
+  /* display: grid;
+  place-items: center; */
+/* display: flex;
+align-items: center; */
+  /* line-height: 20px; */
 }
+
+/* .valid_body_inner {
+  display: inline-block;
+  vertical-align: top;
+  /* line-height: 20px; */
+/* }  */
 
 /* Control */
 #control {
