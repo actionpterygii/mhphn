@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation, Link, Navigate } from "react-router-dom";
 import "./main.css";
 import wilds_jp from "./data/jp/wilds.json";
 import wilds_en from "./data/en/wilds.json";
@@ -269,6 +269,7 @@ export function Root() {
       <Routes>
         <Route path="/en" element={<Main data={wilds_en} />} />
         <Route path="/" element={<Main data={wilds_jp} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
