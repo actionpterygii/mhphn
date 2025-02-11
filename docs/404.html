@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="refresh" content="0; URL=./?pathf404=%2F{{ page.path }}" />
+    <meta charset="UTF-8">
+    <script>
+        window.location.replace('/?path404r=' + encodeURIComponent(window.location.pathname + window.location.search));
+    </script>
 </head>
 <body></body>
 </html>
