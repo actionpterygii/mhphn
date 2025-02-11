@@ -23,6 +23,12 @@
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    let path = window.location.search.match(/path404r=([^&]+)/);
+    if (path) {
+      window.history.replaceState(null, '', decodeURIComponent(path[1]));
+    }
+  </script>
   <script src="./src/index.jsx"></script>
 </body>
 </html>
