@@ -7,7 +7,7 @@ import wilds_en from "./data/en/wilds.json";
 // Title
 function Title() {
   return (
-    <h1 id="title">MH:ワイルズ 弱点一覧</h1>
+    <h1 id="title">モンハン ワイルズ 弱点一覧</h1>
   );
 }
 
@@ -219,9 +219,9 @@ function Main({data}) {
       document.body.classList.add('en');
     } else {
       document.documentElement.lang = 'ja';
-      document.title = 'モンスターハンターワイルズ 弱点一覧 | MHPHN';
+      document.title = 'モンハン ワイルズ 弱点一覧 | MHPHN';
       document.querySelector('meta[name="description"]').setAttribute('content', 'モンスターハンターワイルズのモンスターの弱点などを種族,生息地などの条件を元に絞り込んで素早く参照することができます。');
-      document.getElementById('title').textContent = 'MH:ワイルズ 弱点一覧';
+      document.getElementById('title').textContent = 'モンハン ワイルズ 弱点一覧';
       setSelect([
         '種族を選択',
         '生息地を選択',
