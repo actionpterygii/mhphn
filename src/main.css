@@ -119,10 +119,10 @@
 }
 
 .monster_alias {
+  margin-right: 15px;
 }
 
 .monster_name {
-  margin-left: 15px;
 }
 
 .monster_body {
@@ -197,34 +197,14 @@
   color: var(--display-otoshiwana);
 }
 
-/* .valid:nth-child(16) .valid_head {
-  color: var(--display-koyashi);
-}
-.valid:nth-child(17) .valid_head {
-  color: var(--display-niku);
-} */
-
 .valid_body {
   font-family: monospace;
-  /* font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3"; */
   height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-top: -1px; */
-  /* font-size: 15px; */
-  /* display: grid;
-  place-items: center; */
-/* display: flex;
-align-items: center; */
-  /* line-height: 20px; */
 }
 
-/* .valid_body_inner {
-  display: inline-block;
-  vertical-align: top;
-  /* line-height: 20px; */
-/* }  */
 
 #notes {
   padding: 20px;

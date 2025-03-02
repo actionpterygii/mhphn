@@ -115,7 +115,11 @@ function Monster({monster}) {
   return (
     <div key={monster.name} className="monster">
       <div className="monster_head">
-        <div className="monster_alias">{monster.alias}</div>
+        {monster.alias != "" ?
+          <div className="monster_alias">{monster.alias}</div>
+        :
+          ""
+        }
         <h3 className="monster_name">{monster.name}</h3>
       </div>
       <div className="monster_body">
@@ -126,6 +130,7 @@ function Monster({monster}) {
           </div>
         ))}
       </div>
+      <div>{monster.enemy_element.join(', ')}</div>
       <div className="monster_remark">{monster.remark}</div>
     </div>
   );
