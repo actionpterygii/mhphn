@@ -90,6 +90,13 @@ function Display({refine, data}) {
             <Monster key={monster.name} monster={monster} />
           ))
       }
+      <div id="notes">
+        ※ゲーム本編のハンターノートをもとに作成しています。<br></br>
+        ※属性に関しては各部位で属性の効き方も違うので、効きの良い部位が多い属性から◎,○,△,✕に分けています。<br></br>
+        またモンスターごとに評価しているので、◎でも属性が効きやすいモンスターとあまり効かないモンスターがあります。<br></br>
+        基本◎から埋めるようにし、よほど✕が多すぎない限りはポジティブな値にしています。<br></br>
+        ※状態異常は★3,2,1,✕を◎,○,△,✕に変換しています。
+      </div>
     </div>
   );
 }
@@ -206,9 +213,16 @@ function Main({data}) {
   useEffect(() => {
     if (location.pathname.endsWith('/en')) {
       document.documentElement.lang = 'en';
-      document.title = 'MONSTER HUNTER WILDS Weakness List | MHPHN';
-      document.querySelector('meta[name="description"]').setAttribute('content', 'You can quickly find the weak points of monsters in Monster Hunter Wilds by narrowing down your search based on race, habitat, and other criteria.');
+      const title = 'MONSTER HUNTER WILDS Weakness List | MHPHN';
+      document.title = title;
+      document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+      const desc = 'You can quickly find the weak points of monsters in Monster Hunter Wilds by narrowing down your search based on race, habitat, and other criteria.';
+      document.querySelector('meta[name="description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://mhphn.actionpterygii.com/en');
+
       document.getElementById('title').textContent = 'MH:WILDS Weakness List';
+      document.getElementById('notes').innerHTML = "※The following table is based on the hunter's notes in the main game.<br>※As for the attributes, each part of the body works differently, so we have divided them into ◎, ○, △, and ✕, starting with the attributes that work best on the most common parts of the body.<br>Also, since each monster is evaluated on a monster-by-monster basis, even at ◎, there are monsters for which the attribute works well and others for which it does not work so well.<br>We try to fill in from basic ◎, and unless there are too many O's, we use positive values.<br>※The state of the art is converted from *3,2,1,O to ◎,○,△,✕.";
       setSelect([
         'Sel Class',
         'Sel Habitat',
@@ -219,9 +233,16 @@ function Main({data}) {
       document.body.classList.add('en');
     } else {
       document.documentElement.lang = 'ja';
-      document.title = 'モンハン ワイルズ 弱点一覧 | MHPHN';
-      document.querySelector('meta[name="description"]').setAttribute('content', 'モンスターハンターワイルズのモンスターの弱点などを種族,生息地などの条件を元に絞り込んで素早く参照することができます。');
+      const title = 'モンハン ワイルズ 弱点一覧 | MHPHN';
+      document.title = title;
+      document.querySelector('meta[property="og:title"]').setAttribute('content', title);
+      const desc = 'モンスターハンターワイルズのモンスターの弱点などを種族,生息地などの条件を元に絞り込んで素早く参照することができます。';
+      document.querySelector('meta[name="description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:description"]').setAttribute('content', desc);
+      document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://mhphn.actionpterygii.com/');
+
       document.getElementById('title').textContent = 'モンハン ワイルズ 弱点一覧';
+      document.getElementById('notes').innerHTML = '※ゲーム本編のハンターノートをもとに作成しています。<br>※属性に関しては各部位で属性の効き方も違うので、効きの良い部位が多い属性から◎,○,△,✕に分けています。<br>またモンスターごとに評価しているので、◎でも属性が効きやすいモンスターとあまり効かないモンスターがあります。<br>基本◎から埋めるようにし、よほど✕が多すぎない限りはポジティブな値にしています。<br>※状態異常は★3,2,1,✕を◎,○,△,✕に変換しています。';
       setSelect([
         '種族を選択',
         '生息地を選択',

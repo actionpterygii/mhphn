@@ -185,23 +185,24 @@
   color: var(--display-kizetsu);
 }
 .valid:nth-child(12) .valid_head {
-  color: var(--display-otoshiwana);
-}
-.valid:nth-child(13) .valid_head {
-  color: var(--display-shibirewana);
-}
-.valid:nth-child(14) .valid_head {
   color: var(--display-senkou);
 }
-.valid:nth-child(15) .valid_head {
+.valid:nth-child(13) .valid_head {
   color: var(--display-oto);
 }
-.valid:nth-child(16) .valid_head {
+.valid:nth-child(14) .valid_head {
+  color: var(--display-shibirewana);
+}
+.valid:nth-child(15) .valid_head {
+  color: var(--display-otoshiwana);
+}
+
+/* .valid:nth-child(16) .valid_head {
   color: var(--display-koyashi);
 }
 .valid:nth-child(17) .valid_head {
   color: var(--display-niku);
-}
+} */
 
 .valid_body {
   font-family: monospace;
@@ -224,6 +225,10 @@ align-items: center; */
   vertical-align: top;
   /* line-height: 20px; */
 /* }  */
+
+#notes {
+  padding: 20px;
+}
 
 /* Control */
 #control {

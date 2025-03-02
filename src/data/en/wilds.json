@@ -7,20 +7,22 @@
   ],
   "categories": [
     "Flying Wyvern",
-    "Bird Wyvern",
     "Brute Wyvern",
     "Leviathan",
-    "Fanged Beast",
+    "Bird Wyvern",
     "Amphibian",
+    "Fanged Beast",
     "Temnoceran",
-    "Cephalopoda",
-    "???"
+    "Cephalopod",
+    "Construct",
+    "Demi Elder"
   ],
   "habitats": [
     "Windward Plains",
     "Scarlet Forest",
     "Oilwell Basin",
-    "Iceshard Cliffs"
+    "Iceshard Cliffs",
+    "Ruins of Wyveria"
   ],
   "valid_elements": [
     "Fire",
@@ -39,417 +41,437 @@
     "Paralysis",
     "Sleep",
     "Blastblight",
+    "Flash",
+    "Bleeding",
+    "Defense Down",
     "Stench",
-    "Frenzy Virus"
+    "Frenzy Virus",
+    "Webbed",
+    "Frostblight",
+    "Weak Roar",
+    "Strong Roar",
+    "Minor Wind Pressure",
+    "Dragon Wind Pressure",
+    "Minor Tremor"
   ],
   "monsters": [
     {
-      "name": "Rathalos",
-      "alias": "Fire Wyvern",
+      "name": "Ray Dau",
+      "alias": "",
       "category": "Flying Wyvern",
       "habitat": [
-        "Scarlet Forest"
+        "Windward Plains"
       ],
       "enemy_element": [
-        "Fire",
-        "Poison"
+        "Thunder",
+        "Weak Roar"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Fi": "○",
+        "Wa": "○",
+        "Th": "✕",
+        "Ic": "◎",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "△",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "△",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"✕",
+        "ShTr": "◎"
       },
-      "remark": "aaaaaaaaaaaaaaaaaaaaaaaaa"
+      "remark": ""
     },
     {
       "name": "Rathian",
-      "alias": "Female Fire Wyvern",
+      "alias": "",
       "category": "Flying Wyvern",
       "habitat": [
-        "Scarlet Forest"
+        "Windward Plains",
+        "Scarlet Forest",
+        "Oilwell Basin"
       ],
       "enemy_element": [
         "Fire",
-        "Poison"
+        "Poison",
+        "Weak Roar",
+        "Minor Wind Pressure"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
+        "Fi": "✕",
+        "Wa": "△",
         "Th": "○",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Dr": "◎",
+        "Po": "△",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
-      "name": "Rey Dau",
-      "alias": "Bright Thunder Wyvern",
+      "name": "Rathalos",
+      "alias": "",
       "category": "Flying Wyvern",
       "habitat": [
-        "Windward Plains"
+        "Scarlet Forest",
+        "Oilwell Basin",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
-        "Thunder"
+        "Fire",
+        "Poison",
+        "Weak Roar",
+        "Minor Wind Pressure"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
+        "Fi": "✕",
+        "Wa": "△",
         "Th": "○",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Dr": "◎",
+        "Po": "△",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
-      "name": "Yian Kut-Ku",
-      "alias": "Strange Bird",
-      "category": "Bird Wyvern",
+      "name": "Gravios",
+      "alias": "",
+      "category": "Flying Wyvern",
       "habitat": [
-        "Scarlet Forest"
+        "Oilwell Basin",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
-        "Fire"
+        "Fire",
+        "Poison",
+        "Sleep",
+        "Strong Roar",
+        "Minor Tremor"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
+        "Fi": "✕",
+        "Wa": "◎",
+        "Th": "△",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
-      "name": "Gypceros",
-      "alias": "Poison Strange Bird",
-      "category": "Bird Wyvern",
+      "name": "Arkveld",
+      "alias": "",
+      "category": "Flying Wyvern",
       "habitat": [
-        "Windward Plains"
+        "Windward Plains",
+        "Scarlet Forest",
+        "Oilwell Basin",
+        "Iceshard Cliffs",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
-        "Poison"
+        "Dragon",
+        "Weak Roar",
+        "Minor Wind Pressure"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Wa": "◎",
+        "Th": "◎",
+        "Ic": "◎",
+        "Dr": "◎",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Quematrice",
-      "alias": "Flame Tail Wyvern",
+      "alias": "",
       "category": "Brute Wyvern",
       "habitat": [
-        "Windward Plains"
+        "Windward Plains",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
         "Fire"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
+        "Fi": "✕",
+        "Wa": "◎",
         "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "◎",
+        "Pa": "◎",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Rompopolo",
-      "alias": "Swamp Spouting Wyvern",
+      "alias": "",
       "category": "Brute Wyvern",
       "habitat": [
         "Oilwell Basin"
       ],
       "enemy_element": [
-        ""
+        "Poison",
+        "Weak Roar"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
+        "Fi": "○",
+        "Wa": "◎",
         "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "△",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Balahara",
-      "alias": "Sand Sea Wyvern",
+      "alias": "",
       "category": "Leviathan",
       "habitat": [
         "Windward Plains"
       ],
       "enemy_element": [
-        ""
+        "Water"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Fi": "○",
+        "Wa": "✕",
+        "Th": "◎",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "◎",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
         "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Dth Duna",
+      "alias": "",
+      "category": "Leviathan",
+      "habitat": [
+        "Scarlet Forest"
+      ],
+      "enemy_element": [
+        "Water",
+        "Weak Roar"
+      ],
+      "valid_element": {
+        "Fi": "○",
+        "Wa": "✕",
+        "Th": "◎",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "△",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Hirabami",
-      "alias": "Wind Scissors Wyvern",
+      "alias": "",
+      "category": "Leviathan",
+      "habitat": [
+        "Iceshard Cliffs",
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Ice",
+        "Frostblight",
+        "Weak Roar"
+      ],
+      "valid_element": {
+        "Fi": "◎",
+        "Wa": "○",
+        "Th": "◎",
+        "Ic": "✕",
+        "Dr": "○",
+        "Po": "◎",
+        "Pa": "◎",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Jin Dahaad",
+      "alias": "",
       "category": "Leviathan",
       "habitat": [
         "Iceshard Cliffs"
       ],
       "enemy_element": [
-        "Ice"
+        "Ice",
+        "Frostblight",
+        "Strong Roar"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
+        "Wa": "○",
         "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Ic": "✕",
+        "Dr": "○",
+        "Po": "△",
+        "Pa": "△",
+        "Sl": "△",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "△",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "✕"
       },
       "remark": ""
     },
     {
-      "name": "Uth Duna",
-      "alias": "Wave Dress Wyvern",
-      "category": "Leviathan",
+      "name": "Yian Kut-Ku",
+      "alias": "",
+      "category": "Bird Wyvern",
       "habitat": [
-        "Scarlet Forest"
+        "Scarlet Forest",
+        "Iceshard Cliffs"
       ],
       "enemy_element": [
-        "Water"
+        "Fire",
+        "Minor Wind Pressure"
       ],
       "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
+        "Fi": "○",
+        "Wa": "○",
+        "Th": "◎",
+        "Ic": "◎",
         "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
         "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
-      "name": "Congalala",
-      "alias": "Pink Fur Beast",
-      "category": "Fanged Beast",
-      "habitat": [
-        "Scarlet Forest"
-      ],
-      "enemy_element": [
-        "Stench"
-      ],
-      "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
-        "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
-      },
-      "remark": ""
-    },
-    {
-      "name": "Doshaguma",
-      "alias": "Pioneer Beast",
-      "category": "Fanged Beast",
+      "name": "Gypceros",
+      "alias": "",
+      "category": "Bird Wyvern",
       "habitat": [
         "Windward Plains",
-        "Scarlet Forest"
-      ],
-      "enemy_element": [],
-      "valid_element": {
-        "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
-        "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
-      },
-      "remark": ""
-    },
-    {
-      "name": "Ajarakan",
-      "alias": "Glowing Monkey Beast",
-      "category": "Fanged Beast",
-      "habitat": [
-        "Oilwell Basin"
+        "Oilwell Basin",
+        "Iceshard Cliffs",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
-        ""
+        "Poison",
+        "Flash",
+        "Minor Wind Pressure"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
-        "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "Wa": "△",
+        "Th": "✕",
+        "Ic": "○",
+        "Dr": "△",
+        "Po": "△",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"✕",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Chatacabra",
-      "alias": "Binding Frog",
+      "alias": "",
       "category": "Amphibian",
       "habitat": [
         "Windward Plains"
@@ -458,148 +480,491 @@
         ""
       ],
       "valid_element": {
+        "Fi": "△",
+        "Wa": "△",
+        "Th": "◎",
+        "Ic": "○",
+        "Dr": "✕",
+        "Po": "◎",
+        "Pa": "◎",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "◎",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Congalala",
+      "alias": "",
+      "category": "Fanged Beast",
+      "habitat": [
+        "Scarlet Forest",
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Poison",
+        "Paralysis",
+        "Blastblight",
+        "Stench",
+        "Minor Tremor"
+      ],
+      "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
+        "Wa": "○",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Doshaguma",
+      "alias": "",
+      "category": "Fanged Beast",
+      "habitat": [
+        "Windward Plains",
+        "Scarlet Forest",
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Weak Roar",
+        "Minor Tremor"
+      ],
+      "valid_element": {
+        "Fi": "◎",
+        "Wa": "△",
         "Th": "○",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Dr": "△",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Ajarakan",
+      "alias": "",
+      "category": "Fanged Beast",
+      "habitat": [
+        "Oilwell Basin",
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Fire",
+        "Blastblight",
+        "Weak Roar",
+        "Minor Tremor"
+      ],
+      "valid_element": {
+        "Fi": "✕",
+        "Wa": "◎",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Blangonga",
+      "alias": "雪獅子",
+      "category": "Fanged Beast",
+      "habitat": [
+        "Iceshard Cliffs"
+      ],
+      "enemy_element": [
+        "Ice",
+        "Frostblight",
+        "Weak Roar"
+      ],
+      "valid_element": {
+        "Fi": "◎",
+        "Wa": "○",
+        "Th": "○",
+        "Ic": "✕",
+        "Dr": "✕",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Lala Barina",
-      "alias": "Thorny Flower Spider",
+      "alias": "",
       "category": "Temnoceran",
       "habitat": [
-        "Scarlet Forest"
+        "Scarlet Forest",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
         "Paralysis"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
+        "Wa": "✕",
         "Th": "○",
-        "Ic": "△",
+        "Ic": "○",
         "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
+        "Po": "○",
+        "Pa": "△",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "○",
         "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Nerscylla",
-      "alias": "Shadow Spider",
+      "alias": "",
       "category": "Temnoceran",
       "habitat": [
-        "Iceshard Cliffs"
+        "Oilwell Basin",
+        "Iceshard Cliffs",
+        "Ruins of Wyveria"
       ],
       "enemy_element": [
         "Poison",
-        "Sleep"
+        "Sleep",
+        "Webbed"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
-        "Ic": "△",
+        "Wa": "✕",
+        "Th": "△",
+        "Ic": "○",
         "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
-        "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "Po": "○",
+        "Pa": "◎",
+        "Sl": "△",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Nu Udra",
-      "alias": "Hell Flame Octopus",
-      "category": "Cephalopoda",
+      "alias": "",
+      "category": "Cephalopod",
       "habitat": [
         "Oilwell Basin"
       ],
       "enemy_element": [
-        "Fire"
+        "Fire",
+        "Weak Roar"
+      ],
+      "valid_element": {
+        "Fi": "✕",
+        "Wa": "◎",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "△",
+        "Sl": "○",
+        "Bl": "△",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Xu Wu",
+      "alias": "暗器蛸",
+      "category": "Cephalopod",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        ""
+      ],
+      "valid_element": {
+        "Fi": "○",
+        "Wa": "○",
+        "Th": "○",
+        "Ic": "◎",
+        "Dr": "✕",
+        "Po": "◎",
+        "Pa": "○",
+        "Sl": "△",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "○",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Guardian Doshaguma",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Defense Down",
+        "Weak Roar",
+        "Minor Tremor"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
+        "Wa": "△",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "○",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Guardian Rathalos",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Fire",
+        "Poison",
+        "Weak Roar",
+        "Minor Wind Pressure"
+      ],
+      "valid_element": {
+        "Fi": "✕",
+        "Wa": "△",
         "Th": "○",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
+        "Dr": "◎",
+        "Po": "△",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "○",
         "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Guardian Ebony Odogaron",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Dragon",
+        "Bleeding",
+        "Weak Roar"
+      ],
+      "valid_element": {
+        "Fi": "○",
+        "Wa": "◎",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "△",
+        "Po": "○",
+        "Pa": "◎",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Guardian Arkveld",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Dragon",
+        "Weak Roar",
+        "Minor Wind Pressure"
+      ],
+      "valid_element": {
+        "Fi": "◎",
+        "Wa": "◎",
+        "Th": "◎",
+        "Ic": "◎",
+        "Dr": "◎",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Zoh Shia",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        ""
+      ],
+      "enemy_element": [
+        "Fire",
+        "Thunder",
+        "Strong Roar",
+        "Dragon Wind Pressure"
+      ],
+      "valid_element": {
+        "Fi": "○",
+        "Wa": "○",
+        "Th": "○",
+        "Ic": "○",
+        "Dr": "◎",
+        "Po": "○",
+        "Pa": "○",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "△",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"✕",
+        "ShTr": "✕"
+      },
+      "remark": ""
+    },
+    {
+      "name": "Guardian Fulgur Anjanath",
+      "alias": "",
+      "category": "Construct",
+      "habitat": [
+        "Ruins of Wyveria"
+      ],
+      "enemy_element": [
+        "Thunder",
+        "Weak Roar",
+        "Minor Wind Pressure"
+      ],
+      "valid_element": {
+        "Fi": "○",
+        "Wa": "◎",
+        "Th": "✕",
+        "Ic": "◎",
+        "Dr": "△",
+        "Po": "△",
+        "Pa": "△",
+        "Sl": "○",
+        "Bl": "○",
+        "Ex": "✕",
+        "St": "○",
+        "FlBo": "◎",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     },
     {
       "name": "Gore Magala",
-      "alias": "Black Eclipse Wyvern",
-      "category": "???",
+      "alias": "",
+      "category": "Demi Elder",
       "habitat": [
-        "Windward Plains"
+        "Iceshard Cliffs"
       ],
       "enemy_element": [
-        "Frenzy Virus"
+        "Frenzy Virus",
+        "Strong Roar"
       ],
       "valid_element": {
         "Fi": "◎",
-        "Wa": "◯",
-        "Th": "○",
+        "Wa": "✕",
+        "Th": "△",
         "Ic": "△",
-        "Dr": "✕",
-        "Po": "★",
-        "Pa": "☆",
-        "Sl": "◎",
-        "Bl": "◎",
-        "Ex": "◎",
-        "St": "◎",
-        "PiTr": "◎",
-        "ShTr": "◎",
-        "FlBo": "◎",
-        "SoBo": "◎",
-        "DuBo": "◎",
-        "Me": "◎"
+        "Dr": "○",
+        "Po": "△",
+        "Pa": "△",
+        "Sl": "△",
+        "Bl": "○",
+        "Ex": "○",
+        "St": "△",
+        "FlBo": "✕",
+        "SoBo": "✕",
+        "PiTr":"◎",
+        "ShTr": "◎"
       },
       "remark": ""
     }
